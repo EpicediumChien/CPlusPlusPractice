@@ -1,3 +1,6 @@
+#ifndef NODE_LIST_H_
+#define NODE_LIST_H_
+
 struct ListNode {
     int val;
     ListNode *next;
@@ -6,3 +9,4 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
  
+#endif

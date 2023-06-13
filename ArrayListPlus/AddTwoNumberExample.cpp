@@ -2,7 +2,8 @@
 //
 #include <iostream>
 #include <string>
-#include <D:\C++\CPlusPlusPractice\ArrayListPlus\NodeListAddTwoNumber.h>
+#include "NodeListAddTwoNumber.h"
+
 using namespace std;
 
 class Solution {
@@ -43,9 +44,9 @@ public:
 int main()
 {
     cout << "Hello World!\n";
-    //Example* exampleInit = InitExamples();
+    Example* exampleInit = InitExamples();
     Solution sol;
-    /*while (exampleInit!=NULL)
+    while (exampleInit!=NULL)
     {
         ListNode* result = sol.addTwoNumbers(exampleInit->left, exampleInit->right);
         ListNode* answer = exampleInit->answer;
@@ -59,7 +60,7 @@ int main()
             result = result->next;
             answer = answer->next;
         }
-    }*/
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

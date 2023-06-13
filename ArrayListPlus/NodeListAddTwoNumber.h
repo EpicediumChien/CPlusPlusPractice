@@ -1,6 +1,9 @@
+#ifndef NODE_LIST_TWO_NUM_H_
+#define NODE_LIST_TWO_NUM_H_
+
 #include <iostream>
 #include <string>
-#include <D:\C++\CPlusPlusPractice\ArrayListPlus\NodeList.h>
+#include "NodeList.h"
 
 struct Example {
 	ListNode* left;
@@ -52,3 +55,5 @@ Example* InitExamples()
 
 	return exampleInit;
 }
+
+#endif
