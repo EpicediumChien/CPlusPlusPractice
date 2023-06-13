@@ -5,37 +5,77 @@
 using namespace std;
 
 class Solution {
-private:
-    bool CheckPalinString(string s, int i, int j)
-    {
-        while (i < j)
-        {
-            if (s[i] != s[j])
-            {
-                return false;
-            }
-            i++;
-            j--;
-        }
-        return true;
-    }
 public:
     string longestPalindrome(string s) {
         int max_p_len = 0;
         int startIdx = 0;
-        for (int i = 0; i < s.length(); i++)
-        {
-            for (int j = i; j < s.length(); j++)
+        string stackString = "";
+        if (s.length() != 1) {
+            for (int i = 0; i < s.length(); i++)
             {
-                if (CheckPalinString(s, i, j))
+                stackString += s.substr(i, 1);
+                string leftString = stackString;
+                if (leftString.length() != s.length())
                 {
-                    if (j - i + 1 > max_p_len)
+                    // even
+                    int pLengthCount = 0;
+                    string rightString = s.substr(leftString.length());
+                    while (leftString.length() != 0 && rightString.length() != 0)
                     {
-                        max_p_len = j - i + 1;
-                        startIdx = i;
+                        if (leftString.substr(leftString.length() - 1, 1) == rightString.substr(0, 1))
+                        {
+                            pLengthCount += 2;
+                            leftString = leftString.substr(0, leftString.length() - 1);
+                            rightString = rightString.substr(1, rightString.length() - 1);
+
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                        if (max_p_len < pLengthCount)
+                        {
+                            max_p_len = pLengthCount;
+                            startIdx = leftString.length();
+                        }
+                    }
+
+                    // odd
+                    pLengthCount = 0;
+                    leftString = stackString;
+                    rightString = s.substr(leftString.length());
+                    leftString = leftString.substr(0, leftString.length() - 1);
+                    pLengthCount++;
+                    if (max_p_len < pLengthCount)
+                    {
+                        max_p_len = pLengthCount;
+                        startIdx = leftString.length();
+                    }
+                    while (leftString.length() != 0 && rightString.length() != 0)
+                    {
+                        if (leftString.substr(leftString.length() - 1, 1) == rightString.substr(0, 1))
+                        {
+                            pLengthCount += 2;
+                            leftString = leftString.substr(0, leftString.length() - 1);
+                            rightString = rightString.substr(1, rightString.length() - 1);
+
+                        }
+                        else
+                        {
+                            break;
+                        }
+                        if (max_p_len < pLengthCount)
+                        {
+                            max_p_len = pLengthCount;
+                            startIdx = leftString.length();
+                        }
                     }
                 }
             }
+        }
+        else {
+            return s;
         }
         return s.substr(startIdx, max_p_len);
     }
@@ -43,7 +83,13 @@ public:
 
 int main()
 {
-    string testCase = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
+    //string testCase = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
+    //string testCase = "babad";
+    //string testCase = "cbbd";
+    //string testCase = "bb";
+    //string testCase = "ccc";
+    //string testCase = "azwdzwmwcqzgcobeeiphemqbjtxzwkhiqpbrprocbppbxrnsxnwgikiaqutwpftbiinlnpyqstkiqzbggcsdzzjbrkfmhgtnbujzszxsycmvipjtktpebaafycngqasbbhxaeawwmkjcziybxowkaibqnndcjbsoehtamhspnidjylyisiaewmypfyiqtwlmejkpzlieolfdjnxntonnzfgcqlcfpoxcwqctalwrgwhvqvtrpwemxhirpgizjffqgntsmvzldpjfijdncexbwtxnmbnoykxshkqbounzrewkpqjxocvaufnhunsmsazgibxedtopnccriwcfzeomsrrangufkjfzipkmwfbmkarnyyrgdsooosgqlkzvorrrsaveuoxjeajvbdpgxlcrtqomliphnlehgrzgwujogxteyulphhuhwyoyvcxqatfkboahfqhjgujcaapoyqtsdqfwnijlkknuralezqmcryvkankszmzpgqutojoyzsnyfwsyeqqzrlhzbc";
+    string testCase = "ac";
     Solution sol;
     cout << sol.longestPalindrome(testCase);
 }

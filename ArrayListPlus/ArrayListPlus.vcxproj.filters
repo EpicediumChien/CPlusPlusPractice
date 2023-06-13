@@ -18,11 +18,5 @@
     <ClCompile Include="AddTwoNumberExample.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NodeList.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NodeListAddTwoNumber.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
