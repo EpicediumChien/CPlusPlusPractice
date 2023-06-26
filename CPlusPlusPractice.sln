@@ -35,6 +35,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwapNodesInPairs", "SwapNod
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MedianOfTwoSortedArrays", "MedianOfTwoSortedArrays\MedianOfTwoSortedArrays.vcxproj", "{CE9227BD-8CEB-40E5-B985-E0A24C3BFC85}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegularExpressionMatching", "RegularExpressionMatching\RegularExpressionMatching.vcxproj", "{4677A071-302B-4373-BBE6-5B38BEF171F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeKSortedLists", "MergeKSortedLists\MergeKSortedLists.vcxproj", "{F681C94C-45A8-4252-898C-3117EE550E02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +175,22 @@ Global
 		{CE9227BD-8CEB-40E5-B985-E0A24C3BFC85}.Release|x64.Build.0 = Release|x64
 		{CE9227BD-8CEB-40E5-B985-E0A24C3BFC85}.Release|x86.ActiveCfg = Release|Win32
 		{CE9227BD-8CEB-40E5-B985-E0A24C3BFC85}.Release|x86.Build.0 = Release|Win32
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Debug|x64.ActiveCfg = Debug|x64
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Debug|x64.Build.0 = Debug|x64
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Debug|x86.ActiveCfg = Debug|Win32
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Debug|x86.Build.0 = Debug|Win32
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Release|x64.ActiveCfg = Release|x64
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Release|x64.Build.0 = Release|x64
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Release|x86.ActiveCfg = Release|Win32
+		{4677A071-302B-4373-BBE6-5B38BEF171F1}.Release|x86.Build.0 = Release|Win32
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Debug|x64.ActiveCfg = Debug|x64
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Debug|x64.Build.0 = Debug|x64
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Debug|x86.ActiveCfg = Debug|Win32
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Debug|x86.Build.0 = Debug|Win32
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Release|x64.ActiveCfg = Release|x64
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Release|x64.Build.0 = Release|x64
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Release|x86.ActiveCfg = Release|Win32
+		{F681C94C-45A8-4252-898C-3117EE550E02}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
