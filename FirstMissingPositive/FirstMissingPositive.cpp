@@ -1,44 +1,42 @@
-// ContainerWithMostWater.cpp : This file contains the 'main' function. Program execution begins and ends there.
-// https://leetcode.com/problems/container-with-most-water/
+// FirstMissingPositive.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 class Solution {
 public:
-    int maxArea(vector<int>& height) {
-        int maxNumber = 0;
-        int containResult = 0;
-        int i = 0;
-        int j = height.size() - 1;
-        while (i < j)
+    int firstMissingPositive(vector<int>& nums) {
+        int firstPositive = 1;
+        sort(nums.begin(), nums.end());
+        for (int num : nums)
         {
-            maxNumber = max(maxNumber, min(height[i], height[j]) * (j - i));
-
-            if (height[i] < height[j])
+            if (num>0)
             {
-                i++;
-            }
-            else
-            {
-                j--;
+                if(firstPositive==num)
+                {
+                    firstPositive++;
+                }
+                else if (firstPositive<num)
+                {
+                    return firstPositive;
+                }
             }
         }
 
-        return maxNumber;
+        return firstPositive;
     }
 };
 
 int main()
 {
-    //vector<int> testCase {1, 1};
-    //int answer = 1;
-    vector<int> testCase {1, 8, 6, 2, 5, 4, 8, 3, 7};
-    int answer = 49;
+    vector<int> testCase {1, 2, 0};
+    int answer = 3;
     Solution sol;
-    cout << to_string(sol.maxArea(testCase));
+    cout << to_string(sol.firstMissingPositive(testCase));
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
