@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d56ac67b-e31c-439f-8b58-2bc7699d4449}</ProjectGuid>
-    <RootNamespace>ArrayListPlus</RootNamespace>
+    <ProjectGuid>{17a3b8ad-b92b-40c3-a5b4-8c8024c4ec90}</ProjectGuid>
+    <RootNamespace>SudokuSolver</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumberExample.cpp" />
+    <ClCompile Include="SudokuSolver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d56ac67b-e31c-439f-8b58-2bc7699d4449}</ProjectGuid>
-    <RootNamespace>ArrayListPlus</RootNamespace>
+    <ProjectGuid>{ce9227bd-8ceb-40e5-b985-e0a24c3bfc85}</ProjectGuid>
+    <RootNamespace>MedianOfTwoSortedArrays</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumberExample.cpp" />
+    <ClCompile Include="MedianOfTwoSortedArrays.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

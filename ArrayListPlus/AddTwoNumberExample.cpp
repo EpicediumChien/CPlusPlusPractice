@@ -1,13 +1,73 @@
 // CPlusPlusPractice.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// https://leetcode.com/problems/add-two-numbers/
+
 #include <iostream>
 #include <string>
-#include "NodeListAddTwoNumber.h"
 
 using namespace std;
 
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
+
+
+struct Example {
+    ListNode* left;
+    ListNode* right;
+    ListNode* answer;
+    Example* next = NULL;
+    Example(ListNode* left, ListNode* right, ListNode* answer) : left(left), right(right), answer(answer) {}
+};
+
 class Solution {
 public:
+    ListNode* CreateListNode(string number)
+    {
+        ListNode* nodePtr = NULL;
+        ListNode* nodeCache = NULL;
+
+        for (int i = 0; i < number.length(); i++)
+        {
+            nodePtr = new ListNode(number[i], nodeCache);
+            nodeCache = nodePtr;
+        }
+
+        return nodePtr;
+    }
+
+    Example* InitExamples()
+    {
+        Example* examplePtr;
+        Example* exampleInit;
+
+        ListNode* sample1 = CreateListNode("342");
+        ListNode* sample2 = CreateListNode("465");
+        ListNode* sum = CreateListNode("807");
+
+        examplePtr = new Example(sample1, sample2, sum);
+        exampleInit = examplePtr;
+
+        sample1 = CreateListNode("0");
+        sample2 = CreateListNode("0");
+        sum = CreateListNode("0");
+
+        examplePtr->next = new Example(sample1, sample2, sum);
+        examplePtr = examplePtr->next;
+
+        sample1 = CreateListNode("9999999");
+        sample2 = CreateListNode("9999");
+        sum = CreateListNode("100009998");
+
+        examplePtr->next = new Example(sample1, sample2, sum);
+        examplePtr = examplePtr->next;
+
+        return exampleInit;
+    }
+
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* firstNode = new ListNode();
         ListNode* temp = firstNode;
@@ -43,9 +103,8 @@ public:
 
 int main()
 {
-    cout << "Hello World!\n";
-    Example* exampleInit = InitExamples();
     Solution sol;
+    Example* exampleInit = sol.InitExamples();
     while (exampleInit!=NULL)
     {
         ListNode* result = sol.addTwoNumbers(exampleInit->left, exampleInit->right);

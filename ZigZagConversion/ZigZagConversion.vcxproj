@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d56ac67b-e31c-439f-8b58-2bc7699d4449}</ProjectGuid>
-    <RootNamespace>ArrayListPlus</RootNamespace>
+    <ProjectGuid>{f9457b5e-8401-44cd-bb0a-55c2efaa649b}</ProjectGuid>
+    <RootNamespace>ZigZagConversion</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumberExample.cpp" />
+    <ClCompile Include="ZigZagConversion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

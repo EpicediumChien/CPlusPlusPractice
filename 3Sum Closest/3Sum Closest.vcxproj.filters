@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumberExample.cpp">
+    <ClCompile Include="3Sum Closest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

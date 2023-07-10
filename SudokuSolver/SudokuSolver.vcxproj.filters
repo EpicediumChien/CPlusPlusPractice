@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumberExample.cpp">
+    <ClCompile Include="SudokuSolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

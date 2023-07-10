@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d56ac67b-e31c-439f-8b58-2bc7699d4449}</ProjectGuid>
-    <RootNamespace>ArrayListPlus</RootNamespace>
+    <ProjectGuid>{c1ae7c42-35ee-4e4b-b463-6bb5a09cafd2}</ProjectGuid>
+    <RootNamespace>LetterCombinationsOfAPhoneNumber</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumberExample.cpp" />
+    <ClCompile Include="LetterCombinationsOfAPhoneNumber.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
