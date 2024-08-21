@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-    string romNum(int num, string one, string five, string nextone)
+    string romNum(int num, string one, string five, string next_one)
     {
         string result = "";
         while (num > 0)
@@ -29,7 +29,7 @@ public:
             }
             else if (num == 9)
             {
-                result = one + nextone;
+                result = one + next_one;
                 num -= 9;
             }
         }
