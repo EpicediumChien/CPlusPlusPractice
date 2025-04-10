@@ -32,7 +32,7 @@ public:
 
         for (int i = 0; i < number.length(); i++)
         {
-            nodePtr = new ListNode(number[i], nodeCache);
+            nodePtr = new ListNode(number[i] - '0', nodeCache);
             nodeCache = nodePtr;
         }
 
@@ -60,7 +60,7 @@ public:
 
         sample1 = CreateListNode("9999999");
         sample2 = CreateListNode("9999");
-        sum = CreateListNode("100009998");
+        sum = CreateListNode("10009998");
 
         examplePtr->next = new Example(sample1, sample2, sum);
         examplePtr = examplePtr->next;
@@ -69,35 +69,23 @@ public:
     }
 
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* firstNode = new ListNode();
-        ListNode* temp = firstNode;
+        ListNode* dummyHead = new ListNode(0);
+        ListNode* current = dummyHead;
         int carry = 0;
-        while (l1 != NULL || l2 != NULL || carry)
-        {
-            int sum = 0;
-            if (l1 != NULL) {
-                sum += l1->val;
-                l1 = l1->next;
-            }
 
-            if (l2 != NULL) {
-                sum += l2->val;
-                l2 = l2->next;
-            }
+        while (l1 || l2 || carry) {
+            int sum = (l1 ? l1->val : 0) +
+                (l2 ? l2->val : 0) + carry;
 
-            sum += carry;
-            cout << to_string(sum) + " " + to_string(carry) + "\n";
             carry = sum / 10;
+            current->next = new ListNode(sum % 10);
+            current = current->next;
 
-            temp->val = sum % 10;
-
-            if (l1 == NULL && l2 == NULL && carry == 0)
-                break;
-
-            temp->next = new ListNode();
-            temp = temp->next;
+            if (l1) l1 = l1->next;
+            if (l2) l2 = l2->next;
         }
-        return firstNode;
+
+        return dummyHead->next;
     }
 };
 
@@ -119,6 +107,7 @@ int main()
             result = result->next;
             answer = answer->next;
         }
+        exampleInit = exampleInit->next;
     }
 }
 
