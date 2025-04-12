@@ -2,12 +2,31 @@
 // https://leetcode.com/problems/maximum-subarray
 
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
 
+class Example {
+public:
+    vector<int> example;
+    int result;
+    Example* next;
+    Example(vector<int> ex, int res) : example(ex), result(res) {}
+};
+
 class Solution {
 public:
+    Example* example;
+    Example* InitExamples()
+    {
+        example = new Example({ -2, 1, -3, 4, -1, 2, 1, -5, 4 }, 6);
+        Example* cursor = example;
+        cursor->next = new Example({ 1 }, 1);
+        cursor = cursor->next;
+        cursor->next = new Example({ 5, 4, -1, 7, 8 }, 23);
+    }
+
     int maxSubArray(vector<int>& nums) {
         int tempSum = 0;
         int maxSum = -10000;
@@ -44,34 +63,22 @@ public:
 
         return maxSum;
     }
-
-    vector<vector<int>> InitExamples()
-    {
-        vector<vector<int>> init;
-        vector<int> example1 = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-        vector<int> example2 = { 1 };
-        vector<int> example3 = { 5,4,-1,7,8 };
-
-    }
 };
 
 int main()
 {
     Solution sol;
-    vector<vector<int>>* exampleInit = sol.InitExamples();
+    Example* exampleInit = sol.InitExamples();
     while (exampleInit!=NULL)
     {
-        v* result = sol.addTwoNumbers(exampleInit->left, exampleInit->right);
-        ListNode* answer = exampleInit->answer;
-        while (result!=NULL && answer!=NULL)
-        {
-            if (result->val != answer->val)
+        int result = sol.maxSubArray(exampleInit->example);
+        while (result!=NULL)
+        {//result
+            if (result != exampleInit->result)
             {
-                cout << "Wrong answer at result " + to_string(result->val) + " answer " + to_string(answer->val) + "\n";
+                cout << "Wrong answer at result " + to_string(result) + " answer " + to_string(exampleInit->result) + "\n";
                 return 0;
             }
-            result = result->next;
-            answer = answer->next;
         }
         exampleInit = exampleInit->next;
     }
