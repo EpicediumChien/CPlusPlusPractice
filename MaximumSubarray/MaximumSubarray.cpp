@@ -73,7 +73,7 @@ int main()
     {
         int result = sol.maxSubArray(exampleInit->example);
         while (result!=NULL)
-        {//result
+        {
             if (result != exampleInit->result)
             {
                 cout << "Wrong answer at result " + to_string(result) + " answer " + to_string(exampleInit->result) + "\n";
