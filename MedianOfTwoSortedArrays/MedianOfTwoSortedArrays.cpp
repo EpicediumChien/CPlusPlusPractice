@@ -9,22 +9,46 @@ using namespace std;
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        double midian = 0;
-        nums1.insert(nums1.end(), nums2.begin(), nums2.end());
-        sort(nums1.begin(), nums1.end());
-        if (nums1.size() % 2 == 0)
-        {
-            int mid1 = nums1.size() / 2;
-            int mid2 = mid1 - 1;
-            midian = (((double)nums1[mid1] + (double)nums1[mid2]) / 2);
-        }
-        else
-        {
-            int mid = nums1.size() / 2;
-            midian = nums1[mid];
+        const vector<int>& numsA = (nums1.size() <= nums2.size()) ? nums1 : nums2;
+        const vector<int>& numsB = (nums1.size() > nums2.size()) ? nums1 : nums2;
+
+        int m = numsA.size();
+        int n = numsB.size();
+        int imin = 0, imax = m;
+        int half_len = (m + n + 1) / 2;
+
+        while (imin <= imax) {
+            int i = (imin + imax) / 2;
+            int j = half_len - i;
+
+            if (i < m && numsB[j - 1] > numsA[i]) {
+                // i is too small
+                imin = i + 1;
+            }
+            else if (i > 0 && numsA[i - 1] > numsB[j]) {
+                // i is too big
+                imax = i - 1;
+            }
+            else {
+                // i is perfect
+                int max_of_left = 0;
+                if (i == 0) max_of_left = numsB[j - 1];
+                else if (j == 0) max_of_left = numsA[i - 1];
+                else max_of_left = max(numsA[i - 1], numsB[j - 1]);
+
+                if ((m + n) % 2 == 1)
+                    return max_of_left;
+
+                int min_of_right = 0;
+                if (i == m) min_of_right = numsB[j];
+                else if (j == n) min_of_right = numsA[i];
+                else min_of_right = min(numsA[i], numsB[j]);
+
+                return (max_of_left + min_of_right) / 2.0;
+            }
         }
 
-        return midian;
+        return 0.0; // should never be reached
     }
 };
 
