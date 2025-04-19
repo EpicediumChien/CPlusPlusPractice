@@ -8,13 +8,43 @@ using namespace std;
 class Solution {
 public:
     bool isMatch(string s, string p) {
+        int m = s.size(), n = p.size();
+        vector<bool> dp(n + 1, false);
+        dp[0] = true;
+
+        // Pre-fill for pattern like a*, a*b*, etc.
+        for (int j = 2; j <= n; j++) {
+            if (p[j - 1] == '*') {
+                dp[j] = dp[j - 2];
+            }
+        }
+
+        for (int i = 1; i <= m; i++) {
+            bool prevDiag = dp[0]; // this holds dp[i-1][j-1]
+            dp[0] = false;
+            for (int j = 1; j <= n; j++) {
+                bool temp = dp[j]; // save dp[i-1][j] before overwriting
+                char sc = s[i - 1], pc = p[j - 1];
+
+                if (pc == '*') {
+                    // Two options: zero occurrence or multiple occurrence
+                    dp[j] = dp[j - 2] || ((p[j - 2] == '.' || p[j - 2] == sc) && dp[j]);
+                }
+                else {
+                    dp[j] = (pc == '.' || pc == sc) && prevDiag;
+                }
+
+                prevDiag = temp;
+    }
+
+    bool oldIsMatch(string s, string p) {
         int sSize = s.size(), pSize = p.size();
         vector<vector<bool>> expArray(sSize + 1, vector<bool>(pSize + 1, false));
         expArray[0][0] = true;
 
         // empty string for first row
         for (int j = 1; j <= pSize; j++) {
-            if (p[j - 1] == '*')
+            if (p[j - 1] == '*' && j >= 2)
             {
                 expArray[0][j] = expArray[0][j - 2];
             }
