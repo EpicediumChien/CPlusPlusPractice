@@ -50,6 +50,42 @@ public:
 
         return 0.0; // should never be reached
     }
+
+    double findMedianSortedThreeArrays(vector<int>& A, vector<int>& B, vector<int>& C) {
+        int totalSize = A.size() + B.size() + C.size();
+        int mid1 = (totalSize - 1) / 2;
+        int mid2 = totalSize / 2;
+
+        // 3 pointers
+        int i = 0, j = 0, k = 0;
+        int count = 0, val1 = 0, val2 = 0;
+
+        while (count <= mid2) {
+            int current;
+            int a = (i < A.size()) ? A[i] : INT_MAX;
+            int b = (j < B.size()) ? B[j] : INT_MAX;
+            int c = (k < C.size()) ? C[k] : INT_MAX;
+
+            if (a <= b && a <= c) {
+                current = a;
+                ++i;
+            }
+            else if (b <= a && b <= c) {
+                current = b;
+                ++j;
+            }
+            else {
+                current = c;
+                ++k;
+            }
+
+            if (count == mid1) val1 = current;
+            if (count == mid2) val2 = current;
+            ++count;
+        }
+
+        return (totalSize % 2 == 0) ? (val1 + val2) / 2.0 : val2;
+    }
 };
 
 int main()
