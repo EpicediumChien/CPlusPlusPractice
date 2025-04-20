@@ -37,6 +37,43 @@ private:
 
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
+        if (!head || k == 1) return head;
+
+        ListNode dummy(0);
+        dummy.next = head;
+        ListNode* prevGroupTail = &dummy;
+
+        while (true) {
+            ListNode* kth = prevGroupTail;
+            // Find the k-th node
+            for (int i = 0; i < k && kth; i++) {
+                kth = kth->next;
+            }
+
+            if (!kth) break; // Not enough nodes left
+
+            ListNode* groupStart = prevGroupTail->next;
+            ListNode* nextGroupHead = kth->next;
+
+            // Reverse current k-group
+            ListNode* prev = kth->next;
+            ListNode* curr = groupStart;
+            while (curr != nextGroupHead) {
+                ListNode* tmp = curr->next;
+                curr->next = prev;
+                prev = curr;
+                curr = tmp;
+            }
+
+            // Connect with previous part
+            prevGroupTail->next = kth;
+            prevGroupTail = groupStart;
+        }
+
+        return dummy.next;
+    }
+
+    ListNode* oldReverseKGroup(ListNode* head, int k) {
         bool validFlag = false;
         bool saveHeaderFlag = true;
         ListNode* cursor = head;

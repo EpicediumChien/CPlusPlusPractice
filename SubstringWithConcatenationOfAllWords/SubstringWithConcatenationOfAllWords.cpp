@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <unordered_map>
+#include <string_view>
 using namespace std;
 
 class Solution {
@@ -32,7 +33,58 @@ private:
     }
 
 public:
-    vector<int> findSubstring(string s, vector<string>& words) {
+    vector<int> findSubstring(string& s, vector<string>& words) {
+        vector<int> result;
+        if (words.empty() || s.empty()) return result;
+
+        int wordLen = words[0].length();
+        int wordCount = words.size();
+        int totalLen = wordLen * wordCount;
+        int sLen = s.length();
+
+        if (sLen < totalLen) return result;
+
+        unordered_map<string, int> wordFreq;
+        for (const auto& word : words) {
+            ++wordFreq[word];
+        }
+
+        for (int offset = 0; offset < wordLen; ++offset) {
+            int left = offset;
+            int matchedWords = 0;
+            unordered_map<string, int> windowFreq;
+
+            for (int right = offset; right + wordLen <= sLen; right += wordLen) {
+                string_view current(s.c_str() + right, wordLen);  // avoids copy
+
+                if (wordFreq.count(string(current))) {
+                    ++windowFreq[string(current)];
+                    ++matchedWords;
+
+                    while (windowFreq[string(current)] > wordFreq[string(current)]) {
+                        string_view leftWord(s.c_str() + left, wordLen);
+                        --windowFreq[string(leftWord)];
+                        --matchedWords;
+                        left += wordLen;
+                    }
+
+                    if (matchedWords == wordCount) {
+                        result.push_back(left);
+                    }
+                }
+                else {
+                    // Reset window
+                    windowFreq.clear();
+                    matchedWords = 0;
+                    left = right + wordLen;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    vector<int> oldFindSubstring(string s, vector<string>& words) {
         vector<int> result = vector<int>();
         int len = words[0].length() * words.size();
         int cursorIdx = 0;
