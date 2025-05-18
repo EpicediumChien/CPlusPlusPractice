@@ -69,6 +69,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CountBeautifulNumbers", "Co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextJustification", "TextJustification\TextJustification.vcxproj", "{78BE20E7-7EA6-428F-B436-9C5375AD7F03}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MinimumWindowSubstring", "MinimumWindowSubstring\MinimumWindowSubstring.vcxproj", "{C12087AA-44AD-4DED-8274-3EA68B4D68AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -341,6 +343,14 @@ Global
 		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x64.Build.0 = Release|x64
 		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x86.ActiveCfg = Release|Win32
 		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x86.Build.0 = Release|Win32
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Debug|x64.ActiveCfg = Debug|x64
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Debug|x64.Build.0 = Debug|x64
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Debug|x86.Build.0 = Debug|Win32
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Release|x64.ActiveCfg = Release|x64
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Release|x64.Build.0 = Release|x64
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Release|x86.ActiveCfg = Release|Win32
+		{C12087AA-44AD-4DED-8274-3EA68B4D68AA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
