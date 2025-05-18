@@ -9,8 +9,8 @@ class Solution {
 public:
     bool isMatch(string s, string p) {
         int m = s.size(), n = p.size();
-        vector<bool> dp(n + 1, false);
-        dp[0] = true;
+        vector<int> dp(n + 1, 0);
+        dp[0] = 1;
 
         // Pre-fill for pattern like a*, a*b*, etc.
         for (int j = 2; j <= n; j++) {
@@ -21,20 +21,24 @@ public:
 
         for (int i = 1; i <= m; i++) {
             bool prevDiag = dp[0]; // this holds dp[i-1][j-1]
-            dp[0] = false;
+            dp[0] = 0;
             for (int j = 1; j <= n; j++) {
-                bool temp = dp[j]; // save dp[i-1][j] before overwriting
+                int temp = dp[j]; // save dp[i-1][j] before overwriting
                 char sc = s[i - 1], pc = p[j - 1];
 
                 if (pc == '*') {
                     // Two options: zero occurrence or multiple occurrence
-                    dp[j] = dp[j - 2] || ((p[j - 2] == '.' || p[j - 2] == sc) && dp[j]);
+                    dp[j] = dp[j - 2] == 1 || ((p[j - 2] == '.' || p[j - 2] == sc) && dp[j] == 1) ? 1 : 0;
                 }
                 else {
-                    dp[j] = (pc == '.' || pc == sc) && prevDiag;
+                    dp[j] = (pc == '.' || pc == sc) && prevDiag ? 1 : 0;
                 }
 
                 prevDiag = temp;
+            };
+        };
+
+        return dp[n] == 1;
     }
 
     bool oldIsMatch(string s, string p) {
