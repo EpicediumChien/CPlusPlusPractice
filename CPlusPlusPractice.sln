@@ -65,6 +65,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ValidSudoku", "ValidSuduku\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetPermutation", "GetPermutation\GetPermutation.vcxproj", "{4573FA3A-7E86-4A0B-84D2-70790275F087}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CountBeautifulNumbers", "CountBeautifulNumbers\CountBeautifulNumbers.vcxproj", "{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextJustification", "TextJustification\TextJustification.vcxproj", "{78BE20E7-7EA6-428F-B436-9C5375AD7F03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -321,6 +325,22 @@ Global
 		{4573FA3A-7E86-4A0B-84D2-70790275F087}.Release|x64.Build.0 = Release|x64
 		{4573FA3A-7E86-4A0B-84D2-70790275F087}.Release|x86.ActiveCfg = Release|Win32
 		{4573FA3A-7E86-4A0B-84D2-70790275F087}.Release|x86.Build.0 = Release|Win32
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Debug|x64.ActiveCfg = Debug|x64
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Debug|x64.Build.0 = Debug|x64
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Debug|x86.ActiveCfg = Debug|Win32
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Debug|x86.Build.0 = Debug|Win32
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Release|x64.ActiveCfg = Release|x64
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Release|x64.Build.0 = Release|x64
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Release|x86.ActiveCfg = Release|Win32
+		{619FC9DC-FBF5-4411-8F66-9370BE0F02F8}.Release|x86.Build.0 = Release|Win32
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Debug|x64.ActiveCfg = Debug|x64
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Debug|x64.Build.0 = Debug|x64
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Debug|x86.ActiveCfg = Debug|Win32
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Debug|x86.Build.0 = Debug|Win32
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x64.ActiveCfg = Release|x64
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x64.Build.0 = Release|x64
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x86.ActiveCfg = Release|Win32
+		{78BE20E7-7EA6-428F-B436-9C5375AD7F03}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
