@@ -12,7 +12,7 @@ public:
     int n, k;
     string result;
     Example* next;
-    Example(int n, int k, string res) : n(n), k(k), result(res) {}
+    Example(int n, int k, string res) : n(n), k(k), result(res), next(nullptr) {}
 };
 
 class Solution {
