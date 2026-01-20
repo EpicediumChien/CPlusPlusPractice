@@ -22,13 +22,13 @@ private:
       for (int k = 0; k < 4; ++k) {
         int nr = curr_r + offsets[k];
         int nc = curr_c + offsets[k + 1];
+
         if (nr >= 0 && nc >= 0 && nr < m && nc < n && grid[nr][nc] == '1') {
           q.push({ nr, nc });
           grid[nr][nc] = '0';
         }
       }
     }
-    if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size() || grid[i][j] == '0') return;
   }
 
 public:
