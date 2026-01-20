@@ -83,6 +83,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplyStrings", "Multiply
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InorderTraversal", "InorderTraversal\InorderTraversal.vcxproj", "{D851C384-4532-4F91-8F87-A50621291977}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NumberOfIslands", "NumberOfIslands\NumberOfIslands.vcxproj", "{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -411,6 +413,14 @@ Global
 		{D851C384-4532-4F91-8F87-A50621291977}.Release|x64.Build.0 = Release|x64
 		{D851C384-4532-4F91-8F87-A50621291977}.Release|x86.ActiveCfg = Release|Win32
 		{D851C384-4532-4F91-8F87-A50621291977}.Release|x86.Build.0 = Release|Win32
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Debug|x64.ActiveCfg = Debug|x64
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Debug|x64.Build.0 = Debug|x64
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Debug|x86.ActiveCfg = Debug|Win32
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Debug|x86.Build.0 = Debug|Win32
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Release|x64.ActiveCfg = Release|x64
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Release|x64.Build.0 = Release|x64
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Release|x86.ActiveCfg = Release|Win32
+		{9ACC5741-4FD4-4CBA-A1C1-F9409F564296}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
