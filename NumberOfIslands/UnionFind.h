@@ -1,11 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
+#ifndef UNION_FIND_H  
+#define UNION_FIND_H
+
+#include <vector>      // Only include what this class needs
 
 class UnionFind {
 public:
-  UnionFind(vector<vector<char>>& grid)
+  UnionFind(std::vector<std::vector<char>>& grid)
   {
     count = 0;
     int m = grid.size();
@@ -50,14 +50,14 @@ public:
     }
   }
 private:
-  vector<int> parent;
-  vector<int> rank;
+  std::vector<int> parent;
+  std::vector<int> rank;
   int count;
 };
 
 class Solution {
 public:
-  int numIslands(vector<vector<char>>& grid) {
+  int numIslands(std::vector<std::vector<char>>& grid) {
     int nr = grid.size();
     if (!nr) return 0;
     int nc = grid[0].size();
@@ -69,11 +69,11 @@ public:
       {
         if (grid[r][c] == '1')
         {
-          grid[r][c] = 0;
+          grid[r][c] = '0';
           for (int k = 0; k < 4; k++)
           {
             int rr = r + offsets[k], cc = c + offsets[k + 1];
-            if (rr >= 0 && rr < nr && cc >= 0 && cc <= nc && grid[rr][cc] == '1')
+            if (rr >= 0 && rr < nr && cc >= 0 && cc < nc && grid[rr][cc] == '1')
               uf.Union(r * nc + c, rr * nc + cc);
           }
         }
@@ -83,15 +83,4 @@ public:
   }
 };
 
-int main()
-{
-  vector<vector<char>> grid = {
-    { '1', '1', '1', '1', '0' },
-    { '1', '1', '0', '1', '0' },
-    { '1', '1', '0', '0', '0' },
-    { '0', '0', '0', '0', '0' }
-  };
-  Solution sol;
-  int result = sol.numIslands(grid);
-  cout << result << endl;
-}
+#endif // Header Guard End
