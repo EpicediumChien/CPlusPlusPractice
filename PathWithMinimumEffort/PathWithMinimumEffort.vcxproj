@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{326b8749-6b90-478c-9128-a9a10e0833e7}</ProjectGuid>
-    <RootNamespace>RedundantConnection</RootNamespace>
+    <ProjectGuid>{0e25c652-cd95-4d99-a567-28880dda4314}</ProjectGuid>
+    <RootNamespace>PathWithMinimumEffort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -124,7 +124,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="RedundantConnection.cpp" />
+    <ClCompile Include="PathWithMinimumEffort.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BFS.h" />
+    <ClInclude Include="UnionFind.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
