@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
 private:
-  int memo[201][201];
+  vector<vector<int>> memo;// memo[201][201];
   int DFS(int i, int j,
     vector<vector<int>>& matrix,
     int m, int n) {
@@ -30,7 +30,8 @@ private:
 public:
   int longestIncreasingPath(vector<vector<int>>& matrix) {
     int m = matrix.size(), n = matrix[0].size(), result = 0;
-    memset(memo, 0, sizeof(memo));
+    memo.assign(m, vector<int>(n));
+    //memset(memo, 0, sizeof(memo));
 
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
