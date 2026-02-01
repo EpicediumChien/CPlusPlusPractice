@@ -1,6 +1,6 @@
 // LongestIncreasingPathInAMatrix.cpp : This file contains the 'main' function. Program execution begins and ends there.
 // Longest Increasing Path in a Matrix
-// https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/
+// https://leetcode.com/problems/longest-increasing-path-in-a-matrix
 
 #include <iostream>
 #include <vector>
